@@ -7,4 +7,4 @@ class ZipkinHeadersSession(Session):
     def request(self, method, url, **kwargs):
         zipkin_headers = get_zipkin_headers()
         kwargs['headers'] = kwargs.get('headers', {}).update(zipkin_headers)
-        return super(ZipkinHeadersSession).request(method, url, **kwargs)
+        return super(ZipkinHeadersSession, self).request(method, url, **kwargs)
